@@ -5,6 +5,7 @@ import { CartItem } from './cart-item'
 import './cart.css'
 
 import { useNavigate } from 'react-router-dom'
+import Navbar from '../../components/Navbar'
 
 function Cart() {
     const {cartItems,getTotalCartAmount}=useContext(ShopContext)
@@ -14,6 +15,7 @@ function Cart() {
 
   return (
     <div className='cart'>
+        {/* <Navbar /> */}
         <div>
             <h1>Your cart items</h1>
         </div>

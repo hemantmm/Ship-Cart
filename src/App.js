@@ -12,6 +12,10 @@ import {BiLogIn,BiLogOut} from 'react-icons/bi'
 import { signOut } from 'firebase/auth';
 import { auth } from './firebase-config';
 // import {} from 'react-icons/bi'
+// import AppLogo from '/images/AppLogo.jpg'
+// import 
+// import AppLogo from '../public/AppLogo.jpg'
+import image from './images/AppLogo.jpg'
 
 function App() {
 
@@ -34,6 +38,9 @@ function App() {
     <ShopContextProvider>
     <Router>
       {/* <Navbar /> */}
+      <Link to='/'>
+        <img src={image} className='w-20 absolute mt-0 cursor-pointer' alt="" />
+      </Link>
       <div className='navbar'>
         <div className="links mr-12 flex items-center">
             <Link to='/'>Shop</Link>
@@ -44,7 +51,9 @@ function App() {
               <Link to='/cart'>
                 <BsCart3 />
             </Link>
-            <button className='text-slate-300' onClick={signUserOut}>signOut</button>
+            <button className='text-slate-300' onClick={signUserOut}>
+              <BiLogOut size={25} className='ml-4' />
+              </button>
             {/* <button className='text-slate-300' onClick={signUserOut}>
             {BiLogOut}
             </button> */}
