@@ -16,6 +16,7 @@ import { auth } from './firebase-config';
 // import 
 // import AppLogo from '../public/AppLogo.jpg'
 import image from './images/AppLogo.jpg'
+import Home from './pages/home/Home';
 
 function App() {
 
@@ -43,7 +44,7 @@ function App() {
       </Link>
       <div className='navbar'>
         <div className="links mr-12 flex items-center">
-            <Link to='/'>Shop</Link>
+            <Link to='/shop'>Shop</Link>
             {!isAuth ? <Link to='/login'>
               <BiLogIn />
             </Link> :(
@@ -63,7 +64,8 @@ function App() {
     </div>
 
       <Routes>
-        <Route path='/' element={<Shop />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/shop' element={<Shop />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/login' element={<Login setIsAuth={setIsAuth} />} />
       </Routes>
