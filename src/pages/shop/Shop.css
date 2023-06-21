@@ -1,3 +1,14 @@
+.shop
+{
+  /* position: absolute; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* background: #000; */
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  overflow: hidden;
+}
+
 .shopTitle {
     margin-top: 100px;
     text-align: center;
@@ -15,7 +26,7 @@
     border-radius: 15px;
     width: 300px;
     height: 350px;
-    margin: 100px;
+    margin: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,5 +60,39 @@
   .addToCartBttn:hover {
     background-color: rgb(19, 19, 19);
     color: white;
+    cursor: pointer;
+  }
+
+  .buttons
+  {
+    position: relative;
+    /* top: 13rem; */
+    left: 2rem;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: start; */
+    /* align-items: center; */
+  }
+
+  .filter
+  {
+    font-size: larger;
+    font-weight: 500;
+    position: relative;
+    top: 1rem;
+    /* padding: 1rem; */
+  }
+
+  .buttons button
+  {
+    border: 2px solid;
+    /* margin-top: rem; */
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 3rem;
+    text-align: center;
+    position: relative;
+    top: 1rem;
+    width: 7rem;
     cursor: pointer;
   }

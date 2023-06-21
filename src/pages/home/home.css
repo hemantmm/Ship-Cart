@@ -1,0 +1,71 @@
+.app
+{
+    position: relative;
+    display: flex;
+    /* relative flex justify-center items-center */
+    justify-content: center;
+    align-items: center;
+    /* width: 10rem; */
+}
+
+.imag
+{
+    position: relative;
+    /* width: 500px; */
+    width: 150rem;
+    height: 550px;
+    top: 2rem;
+    /* left: 5rem; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid #000; */
+    overflow: hidden;
+}
+
+
+.imag img
+{
+    position: relative;
+    /* width: 10rem; */
+    height: 32rem;
+}
+
+/* .slideImage
+{
+    width: 10rem;
+} */
+
+/* .buttonPrev
+{
+    position: absolute;
+    top: 5rem;
+} */
+
+.buttonPrev
+{
+    border: 2px solid;
+    padding: 0.3rem;
+    font-size: larger;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 2rem;
+    position: absolute;
+    left: 1rem;
+    width: 4rem;
+    background-color: darkgrey;
+}
+
+.buttonNext
+{
+    border-radius: 2rem;
+    position: absolute;
+    border: 2px solid;
+    padding: 0.3rem;
+    font-size: larger;
+    font-weight: 500;
+    width: 4rem;
+    background-color: darkgrey;
+    right: 2rem;
+}

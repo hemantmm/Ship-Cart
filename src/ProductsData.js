@@ -11,6 +11,7 @@ export const PRODUCTS=[
         productName:"IPhone",
         price:999.0,
         productImage:product1,
+        category:'mobile',
     },
 
     {
@@ -18,6 +19,7 @@ export const PRODUCTS=[
         productName:"macbook pro 2022",
         price:1999.0,
         productImage:product2,
+        category:'laptop',
     },
 
     {
@@ -25,6 +27,7 @@ export const PRODUCTS=[
         productName:"Cannon M50 Camera",
         price:699.0,
         productImage:product3,
+        category:'camera',
     },
 
     {
@@ -32,6 +35,7 @@ export const PRODUCTS=[
         productName:"WLS Van Gogh Denim Jacket",
         price:228.0,
         productImage:product4,
+        category:'jacket',
     },
 
     {
@@ -39,5 +43,6 @@ export const PRODUCTS=[
         productName:"LED Light Strips",
         price:19.0,
         productImage:product5,
+        category:'mobile',
     },
 ]

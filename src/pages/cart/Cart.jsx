@@ -13,6 +13,7 @@ function Cart() {
 
     const navigate=useNavigate()
 
+
   return (
     <div className='cart'>
         {/* <Navbar /> */}
@@ -30,7 +31,7 @@ function Cart() {
         {totalAmount>0?(
         <div className="checkout">
             <p>Subtotal: ${totalAmount}</p>
-            <button onClick={()=>navigate('/')}>Continue Shopping</button>
+            <button onClick={()=>navigate('/shop')}>Continue Shopping</button>
             <button>Checkout</button>
         </div>):(
             <h1>Your cart is empty!</h1>
