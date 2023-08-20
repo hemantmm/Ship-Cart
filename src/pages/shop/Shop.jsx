@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {PRODUCTS} from '../../ProductsData'
 import Product from './Product'
 import './Shop.css'
+import {MdClear} from 'react-icons/md'
 
 function Shop() {
 
@@ -14,18 +15,62 @@ function Shop() {
     setData(result)
   }
 
-  return (
-    <div className='shop'>
+  const [sortOrder,setSortOrder]=useState('select')
 
-      <div className="buttons">
-        <span className='filter cursor-pointer' onClick={()=>setData(PRODUCTS)}>Filter</span>
-        <button onClick={()=>filterResult('mobile')}>Mobile</button>
-        <button onClick={()=>filterResult('laptop')}>Laptop</button>
-        <button onClick={()=>filterResult('camera')}>Camera</button>
-        <button onClick={()=>filterResult('jacket')}>Jacket</button>
+   const sortProduct=(order)=>{
+      const sortedProducts=[...data].sort((a,b)=>{
+          if(order==='asc')
+          {
+            return a.price-b.price;
+          }
+          else{
+              return b.price-a.price;
+          }
+      })
+      setData(sortedProducts)
+      setSortOrder(order)
+   }
+
+   const clearFilter=()=>{
+    setData(PRODUCTS)
+   }
+
+  return (
+
+    <>
+      <div className='shops'>
+      
+    <div className='shop'>
+<div className="buttons">
+  <span className='filter cursor-pointer'>Filter</span>
+  <button onClick={()=>filterResult('mobile')}>Mobile</button>
+  <button onClick={()=>filterResult('laptop')}>Laptop</button>
+  <button onClick={()=>filterResult('camera')}>Camera</button>
+  <button onClick={()=>filterResult('jacket')}>Jacket</button>
+  <button onClick={()=>setData(PRODUCTS)} className='clearFilter'>Clear Filter</button>
+  </div>
+
+
+<div className="sort-container ">
+        <span className="sort-label">Sort by Price:</span>
+        <select className="sort-select"  value={sortOrder} onChange={(e)=>{
+          if(e.target.value==='clear')
+          {
+            clearFilter()
+          }
+          else{
+            sortProduct(e.target.value)
+          }
+        }}>
+         <option value="">--Select--</option>
+          <option value="asc">Low to High</option>
+          <option value="desc">High to Low</option>
+          <option value="clear">Clear Filter</option>
+        </select>
       </div>
 
-      <div className='shops'>
+
+    </div>
         <div className="shopTitle">
             <h1>hemant shop</h1>
         </div>
@@ -35,7 +80,8 @@ function Shop() {
             )}
         </div>
         </div>
-    </div>
+
+    </>
   )
 }
 

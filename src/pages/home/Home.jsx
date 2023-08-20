@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-// import { Button } from '@mui/material'
 import { ImageA } from './ImageA'
 import './home.css'
 import 'animate.css'
-
+import {GrPrevious,GrNext} from 'react-icons/gr'
 
 function Home() {
 
@@ -18,21 +17,8 @@ function Home() {
     setCur(cur === imageLength ? 0 : cur+1)
   }
 
-  // useEffect(()=>{
-  //   setInterval(() => {
-  //     next()
-  //   }, 3000);
-  // },[])
-
-  // useEffect(()=>{
-  //   setCur(0)
-  // },[])
-
   return (
-    // <SlideShowss
     <main className='app'>
-      {/* <SlideShows */}
-        {/* <button className='border-solid bg-red-500'>prev</button> */}
         {
           ImageA.map((images,i)=>{
             return  cur===i && (
@@ -42,9 +28,13 @@ function Home() {
             )
           })
         }
-        <button onClick={()=>prev()} className='buttonPrev'>prev</button>
+        <button onClick={()=>prev()} className='buttonPrev'>
+          <GrPrevious size={30} />
+        </button>
         
-        <button onClick={()=>next()} className='buttonNext'>next</button>
+        <button onClick={()=>next()} className='buttonNext'>
+          <GrNext size={30} />
+        </button>
     </main>
   )
 }
