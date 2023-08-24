@@ -32,7 +32,7 @@ export const PRODUCTS=[
 
     {
         id:4,
-        productName:"WLS Van Gogh Denim Jacket",
+        productName:"WLS Denim Jacket",
         price:228.0,
         productImage:product4,
         category:'jacket',

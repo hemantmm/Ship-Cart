@@ -92,3 +92,13 @@
   {
     margin-right: 1rem;
   }
+
+  .addToWishListBttn {
+    background-color: transparent;
+    min-width: 100px;
+    margin-top: 5px;
+    padding-left: 12rem;
+    position: relative;
+    bottom: 5.5rem;
+    border-radius: 15px;
+}

@@ -43,5 +43,9 @@ const updateCartItemCount=(newAmount,itemId)=>{
 
 const contextValue={cartItems,addToCart,removeFromCart,updateCartItemCount,getTotalCartAmount}
 
-    return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
+    return (
+    <ShopContext.Provider value={contextValue}>
+        {props.children}
+        </ShopContext.Provider>
+        )
 }

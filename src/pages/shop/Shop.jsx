@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import {PRODUCTS} from '../../ProductsData'
 import Product from './Product'
 import './Shop.css'
 import {MdClear} from 'react-icons/md'
+
 
 function Shop() {
 
@@ -34,6 +35,8 @@ function Shop() {
    const clearFilter=()=>{
     setData(PRODUCTS)
    }
+
+
 
   return (
 

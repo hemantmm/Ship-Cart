@@ -3,6 +3,10 @@ import { ImageA } from './ImageA'
 import './home.css'
 import 'animate.css'
 import {GrPrevious,GrNext} from 'react-icons/gr'
+import Shop from '../shop/Shop'
+import {PRODUCTS} from '../../ProductsData'
+// import Product from './Product'
+import Product from '../shop/Product'
 
 function Home() {
 
@@ -17,7 +21,37 @@ function Home() {
     setCur(cur === imageLength ? 0 : cur+1)
   }
 
+  const  [data,setData]=useState(PRODUCTS)
+
+  const filterResult=(categoryItem)=>{
+    const result=PRODUCTS.filter((curData)=>{
+      return curData.category===categoryItem
+    })
+    setData(result)
+  }
+
+  const [sortOrder,setSortOrder]=useState('select')
+
+   const sortProduct=(order)=>{
+      const sortedProducts=[...data].sort((a,b)=>{
+          if(order==='asc')
+          {
+            return a.price-b.price;
+          }
+          else{
+              return b.price-a.price;
+          }
+      })
+      setData(sortedProducts)
+      setSortOrder(order)
+   }
+
+   const clearFilter=()=>{
+    setData(PRODUCTS)
+   }
+
   return (
+    <>
     <main className='app'>
         {
           ImageA.map((images,i)=>{
@@ -36,6 +70,14 @@ function Home() {
           <GrNext size={30} />
         </button>
     </main>
+    {/* <Shop /> */}
+
+    <div className="products">
+            {data.map((product)=>
+                <Product data={product} />
+            )}
+        </div>
+    </>
   )
 }
 

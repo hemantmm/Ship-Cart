@@ -16,6 +16,9 @@ import Home from './pages/home/Home';
 import {MdHome} from 'react-icons/md'
 import {FaShoppingBag} from 'react-icons/fa'
 import { PropagateLoader } from 'react-spinners';
+import { Wishlist } from './pages/wishlist/Wishlist';
+import { WishlistContextProvider } from './context/Wishlist-context';
+import {AiFillHeart} from 'react-icons/ai'
 
 
 function App() {
@@ -49,6 +52,7 @@ function App() {
       <div className='flex items-center h-screen justify-center laoding'>
       <PropagateLoader color={'#D2181B'} loading={loading} size={20} />
       </div>:
+      <WishlistContextProvider>
       <ShopContextProvider>
     <Router>
       <Link to='/'>
@@ -62,18 +66,25 @@ function App() {
             <Link to='/shop' style={{color:'rgb(47, 213, 255)'}}>
               <FaShoppingBag />
             </Link>
-            {!isAuth ? <Link to='/login' style={{color:'rgb(47, 213, 255)'}}>
-              <BiLogIn />
-            </Link> :(
-              <>
-              <Link to='/cart' style={{color:'rgb(47, 213, 255)'}}>
+            <Link to='/wishlist' style={{color:'rgb(47, 213, 255)'}}>
+              <AiFillHeart />
+            </Link>
+            <Link to='/cart' style={{color:'rgb(47, 213, 255)'}}>
                 <BsCart3 />
             </Link>
+            {!isAuth ? <Link to='/login' style={{color:'rgb(47, 213, 255)'}}>
+              <BiLogIn />
+            </Link> :
             <button className='text-slate-300' style={{color:'rgb(47, 213, 255)'}} onClick={signUserOut}>
               <BiLogOut size={25} className='ml-4' />
               </button>
-              </>
-            )}
+              }
+    {/* <Link to='/cart' style={{color:'rgb(47, 213, 255)'}}>
+                <BsCart3 />
+            </Link>
+      <Link to='/login' style={{color:'rgb(47, 213, 255)'}}>
+              <BiLogIn />
+            </Link>  */}
         </div>
     </div>
 
@@ -81,10 +92,12 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/shop' element={<Shop />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/wishlist' element={<Wishlist />} />
         <Route path='/login' element={<Login setIsAuth={setIsAuth} />} />
       </Routes>
     </Router>
     </ShopContextProvider>
+    </WishlistContextProvider>
 }
     </div>
   );
